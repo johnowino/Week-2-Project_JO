@@ -85,13 +85,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="710,1860.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="710,2030" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Array of Names" sap:VirtualizedContainerService.HintSize="648,1840.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Array of Names" sap:VirtualizedContainerService.HintSize="648,1919.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Default="[{&quot;John&quot;, &quot;Jane&quot;,&quot;Andrew&quot;, &quot;Anne&quot;, &quot;Albert&quot;, &quot;Rose&quot;}]" Name="ArrayNames" />
         <Variable x:TypeArguments="x:String" Name="ListNames" />
@@ -102,14 +102,14 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="This is the array with names that the process will iterate through checking for those that start with letter &quot;A&quot;" DisplayName="Log Message - Array with names to be processed" sap:VirtualizedContainerService.HintSize="586,190" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[string.join(&quot;,&quot;,ArrayNames)]">
+      <ui:LogMessage sap2010:Annotation.AnnotationText="This is the array with names that the process will iterate through checking for those that start with letter &quot;A&quot;. Output in string format separated by commas for readability." DisplayName="Log Message - Array with names to be processed" sap:VirtualizedContainerService.HintSize="586,223.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[string.join(&quot;,&quot;,ArrayNames)]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="We will parse through each name in the array and identify hose that start with letter &quot;A&quot;" DisplayName="For Each - Name in array" sap:VirtualizedContainerService.HintSize="586,1143.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ArrayNames]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="We will parse through each name in the array and identify those that start with letter &quot;A&quot;" DisplayName="For Each - Name in array" sap:VirtualizedContainerService.HintSize="586,1143.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ArrayNames]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
@@ -147,7 +147,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap2010:Annotation.AnnotationText="Increment counter with number 1 for each value of &quot;Ture&quot;" DisplayName="Assign - Count the numer of &quot;True&quot;" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign sap2010:Annotation.AnnotationText="Increment counter with number 1 for each value of &quot;Ture&quot;" DisplayName="Assign - Track the numer of &quot;True&quot; values" sap:VirtualizedContainerService.HintSize="434,116" sap2010:WorkflowViewState.IdRef="Assign_5">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[countNames]</OutArgument>
                       </Assign.To>
@@ -196,7 +196,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <ui:LogMessage DisplayName="Log Message - Count of names that start with letter &quot;A&quot;" sap:VirtualizedContainerService.HintSize="586,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[countNames]" />
+      <ui:LogMessage sap2010:Annotation.AnnotationText="Logging final count of names found in array that start with letter &quot;A&quot;" DisplayName="Log Message - Count of names that start with letter &quot;A&quot;" sap:VirtualizedContainerService.HintSize="586,190" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[countNames]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="Final count of names in array that have been found to start with letter &quot;A" AutoCloseAfter="00:00:00" DisplayName="Message Box - Output to screen" sap:VirtualizedContainerService.HintSize="586,132" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[countNames]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
