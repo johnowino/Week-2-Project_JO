@@ -102,7 +102,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="This is the array with names that the process will iterate through checking for those that start with letter &quot;A&quot;. Output in string format separated by commas for readability." DisplayName="Log Message - Array with names to be processed" sap:VirtualizedContainerService.HintSize="586,223.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[string.join(&quot;,&quot;,ArrayNames)]">
+      <ui:LogMessage sap2010:Annotation.AnnotationText="This is the array with names that the process will iterate through checking for those that start with letter &quot;A&quot;. Output in string format separated by commas for readability." DisplayName="Log Message - Array with names to be processed" sap:VirtualizedContainerService.HintSize="586,223.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[string.join(&quot;, &quot;,ArrayNames)]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -121,7 +121,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap2010:Annotation.AnnotationText="We search through the array for names that starts with letter &quot;A&quot; and save then to a variable ListNames. The boolean out is converted to text to allow use of IF/Else statement" DisplayName="Assign - Save the modified list of names in boolean form " sap:VirtualizedContainerService.HintSize="510,147.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap2010:Annotation.AnnotationText="We search through the array for names that starts with letter &quot;A&quot; and save them to a variable ListNames. The boolean out is converted to text to allow use of IF/Else statement" DisplayName="Assign - Save the modified list of names in boolean form " sap:VirtualizedContainerService.HintSize="510,147.33333333333334" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[ListNames]</OutArgument>
                 </Assign.To>
