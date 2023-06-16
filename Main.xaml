@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="700,1925.3333333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="612,952.6666666666666" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -85,37 +85,47 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="710,2030" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="512,888" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Array of Names" sap:VirtualizedContainerService.HintSize="648,1919.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Array of Names" sap:VirtualizedContainerService.HintSize="450,777.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
-        <Variable x:TypeArguments="s:String[]" Default="[{&quot;John&quot;, &quot;Jane&quot;,&quot;Andrew&quot;, &quot;Anne&quot;, &quot;Albert&quot;, &quot;Rose&quot;}]" Name="ArrayNames" />
+        <Variable x:TypeArguments="s:String[]" Name="ArrayNames">
+          <Variable.Default>
+            <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Angela&quot;,&quot;John&quot;, &quot;Jane&quot;,&quot;Andrew&quot;, &quot;Anne&quot;, &quot;Albert&quot;, &quot;Rose&quot;}" />
+          </Variable.Default>
+        </Variable>
         <Variable x:TypeArguments="x:String" Name="ListNames" />
-        <Variable x:TypeArguments="x:Int32" Default="0" Name="countNames" />
+        <Variable x:TypeArguments="x:Int32" Name="countNames">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:Int32" />
+          </Variable.Default>
+        </Variable>
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="This is the array with names that the process will iterate through checking for those that start with letter &quot;A&quot;. Output in string format separated by commas for readability." DisplayName="Log Message - Array with names to be processed" sap:VirtualizedContainerService.HintSize="586,223.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[string.join(&quot;, &quot;,ArrayNames)]">
+      <ui:LogMessage sap2010:Annotation.AnnotationText="This is the array with names that the process will iterate through checking for those that start with letter &quot;A&quot;. Output in string format separated by commas for readability." DisplayName="Log Message - Array with names to be processed" sap:VirtualizedContainerService.HintSize="388,182.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[string.join(&quot;, &quot;,ArrayNames)]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="We will parse through each name in the array and identify those that start with letter &quot;A&quot;" DisplayName="For Each - Name in array" sap:VirtualizedContainerService.HintSize="586,1143.3333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ArrayNames]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="We will parse through each name in the array and identify those that start with letter &quot;A&quot;" DisplayName="For Each - Name in array" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ArrayNames]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="Name" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,922.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,719.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,7 +144,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <If sap2010:Annotation.AnnotationText="Decision box to separate &quot;Tue&quot; and &quot;False&quot; entries." Condition="[ListNames is &quot;True&quot;]" DisplayName="If Name starts with letter &quot;A&quot;" sap:VirtualizedContainerService.HintSize="510,418" sap2010:WorkflowViewState.IdRef="If_2">
+              <If sap2010:Annotation.AnnotationText="Decision box to separate &quot;Tue&quot; and &quot;False&quot; entries." Condition="[ListNames is &quot;True&quot;]" DisplayName="If Name starts with letter &quot;A&quot;" sap:VirtualizedContainerService.HintSize="510,214.66666666666666" sap2010:WorkflowViewState.IdRef="If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -193,17 +203,21 @@
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="Logging final count of names found in array that start with letter &quot;A&quot;" DisplayName="Log Message - Count of names that start with letter &quot;A&quot;" sap:VirtualizedContainerService.HintSize="586,190" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[countNames]">
+      <ui:LogMessage sap2010:Annotation.AnnotationText="Logging final count of names found in array that start with letter &quot;A&quot;" DisplayName="Log Message - Count of names that start with letter &quot;A&quot;" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[countNames]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="Final count of names in array that have been found to start with letter &quot;A" AutoCloseAfter="00:00:00" DisplayName="Message Box - Output to screen" sap:VirtualizedContainerService.HintSize="586,132" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[countNames]">
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="Final count of names in array that have been found to start with letter &quot;A" AutoCloseAfter="00:00:00" DisplayName="Message Box - Output to screen" sap:VirtualizedContainerService.HintSize="388,132" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[countNames]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
